@@ -16,11 +16,13 @@ class dataTransform:
     #df2.drop(columns=['Name'])
     #Rounding values as configured
     df2.round(3)
-    print(df2)
+    return df2
+
+#Test
 
 df = pd.read_csv("Pokemon.csv")
-
 print(df)
 p1 = dataTransform(df)
-p1.myfunc()
-
+df = p1.myfunc()
+print(df)
+df.to_csv('output.csv', header=False, index=False)
